@@ -1,5 +1,7 @@
 # Implementation
-Reprendre code open-source (voir exemples) et modifier leur structure ou juste expliquer un code et implémenter un exemple d'utilisation (ou GUI) ?
+Jajoe doit reprendre code open-source de OpenSSL et l'utiliser pour expliquer dans les grandes lignes comment s'implémente l'HMAC (voir référence).
+
+Koisell doit réaliser une GUI pour pouvoir utiliser cette librairie (OpenSSL) pour encrypter en HMAC. Cette GUI devra permettre de rentrer de nombreux paramètres et encryptera un fichier donné en entrée.
 
 # Rapport
 ## Expliquation de ce qu'on a fait
@@ -11,6 +13,5 @@ Reprendre code open-source (voir exemples) et modifier leur structure ou juste e
 * http://csrc.nist.gov/groups/STM/cavp/documents/mac/hmacval.html
 * http://crypto.stackexchange.com/questions/10140/using-one-way-hash-functions-as-the-encryption-method
 * http://security.stackexchange.com/questions/20129/how-and-when-do-i-use-hmac/20301
-## Exemples 
-* https://github.com/ogay/hmac
-* https://docs.python.org/3/library/hmac.html
+# Références 
+* OpenSSL : https://gist.github.com/tsupo/112188/acdbf002acf454bd60c355a776b9a5b58b6dff5e
