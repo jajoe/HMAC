@@ -1,5 +1,5 @@
 # Implementation
-Jajoe doit reprendre code open-source de OpenSSL et l'utiliser pour expliquer dans les grandes lignes comment s'implémente l'HMAC (voir référence).
+Jajoe doit reprendre code open-source de OpenSSL et l'utiliser pour expliquer dans les grandes lignes comment s'implémente l'HMAC (voir référence [1] et [2]).
 
 Koisell doit réaliser une GUI pour pouvoir utiliser cette librairie (OpenSSL) pour encrypter en HMAC. Cette GUI devra permettre de rentrer de nombreux paramètres et encryptera un fichier donné en entrée.
 
@@ -15,3 +15,4 @@ Koisell doit réaliser une GUI pour pouvoir utiliser cette librairie (OpenSSL) p
 * http://security.stackexchange.com/questions/20129/how-and-when-do-i-use-hmac/20301
 # Références 
 * OpenSSL : https://gist.github.com/tsupo/112188/acdbf002acf454bd60c355a776b9a5b58b6dff5e
+* OpenSSL explication : https://linux.die.net/man/3/hmac
