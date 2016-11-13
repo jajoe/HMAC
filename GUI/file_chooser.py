@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-from tkinter import Frame, StringVar, Entry, Button
+from tkinter import Tk, Frame, StringVar, Entry, Button
 from os import getcwd
 from tkinter.filedialog import askopenfilename
 from functools import partial
@@ -13,13 +13,25 @@ class ChooseFileFrame(Frame):
         field.set(fname)
 
     def __init__(self, parent):
-        f_choix_fichier = super(ChooseFileFrame, self).__init__(parent)
-        input_file_text = StringVar(f_choix_fichier)
-        input_file_entry = Entry(f_choix_fichier, width=100, textvariable=input_file_text)
+        super(ChooseFileFrame, self).__init__(parent)
+        input_file_text = StringVar(self)
+        input_file_entry = Entry(self, width=100, textvariable=input_file_text)
         input_file_text.set(getcwd())
 
-        button = Button(f_choix_fichier, text='add file',
+        button = Button(self, text='add file',
                         command=partial(self.__update_field, input_file_text))
 
         input_file_entry.grid(column=0, row=0)
         button.grid(column=0, row=1)
+
+
+def main():
+    root = Tk()
+    root.geometry("598x200+250+100")
+    f_chooser = ChooseFileFrame(root)
+    f_chooser.grid(column=0, row=0)
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()

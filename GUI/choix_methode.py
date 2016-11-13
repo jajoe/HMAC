@@ -1,20 +1,32 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-from tkinter import IntVar, Radiobutton, Frame, W
+from tkinter import IntVar, Radiobutton, Frame, Tk
 
 
 class ChooseMethode(Frame):
     """docstring for ChooseMethode"""
-    def __init__(self, arg):
-        f_choose_methode = super(ChooseMethode, self).__init__()
+    def __init__(self, parent, var_dict, side="left"):
+        super(ChooseMethode, self).__init__(parent)
         self.var = IntVar()
-        button_sha1 = Radiobutton(f_choose_methode, text="sha1", variable=self.var, value=0)
-        button_sha224 = Radiobutton(f_choose_methode, text="sha224", variable=self.var, value=1)
-        button_sha512 = Radiobutton(f_choose_methode, text="sha512", variable=self.var, value=2)
-        button_md5 = Radiobutton(f_choose_methode, text="md5", variable=self.var, value=3)
 
-        button_sha1.pack(anchor=W)
-        button_sha224.pack(anchor=W)
-        button_sha512.pack(anchor=W)
-        button_md5.pack(anchor=W)
+        def print_debug(value):
+            print(value)
+
+        for value, button_name in var_dict.items():
+            self.button = Radiobutton(self, text=button_name, variable=self.var, value=value)
+            self.button.pack(side=side)
+
+
+def main():
+    root = Tk()
+    root.geometry("598x200+250+100")
+    choses = {0: "sha1", 1: "sha224", 2: "sha512", 3: "md5"}
+    f_choose_methode = ChooseMethode(root, choses)
+    f_choose_methode.grid(column=0, row=0)
+
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()
