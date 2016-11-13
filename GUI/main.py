@@ -4,7 +4,7 @@
 
 from tkinter import Tk
 from file_chooser import ChooseFileFrame
-from choix_methode import ChooseMethode
+from methode_chooser import ChooseMethode
 version = "0.2"
 
 
