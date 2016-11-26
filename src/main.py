@@ -9,7 +9,7 @@ from GUI.entry_with_label import EntryWithLabel
 from hmac_script import hmac_encrypt
 from os.path import isfile
 from functools import partial
-version = "0.4"
+version = "0.5"
 
 
 def hmac_function(res_field, file_choise, methode_choise, choses, key_choise):
@@ -21,12 +21,14 @@ def hmac_function(res_field, file_choise, methode_choise, choses, key_choise):
             key = key_choise.message_str.get()
             res_field["text"] = hmac_encrypt(methode, msg, key)
     else:
-        res_field["text"] = "You didn't give a file..."
+        methode = choses[methode_choise.var.get()]
+        key = key_choise.message_str.get()
+        res_field["text"] = hmac_encrypt(methode, file, key)
 
 
 root = Tk()  # Création de la fenêtre racine
 root.wm_title("JSE \t-\t" + version)
-root.geometry("598x200+250+100")
+root.geometry("800x200+250+100")
 
 
 f_choix_fichier = ChooseFileFrame(root)
@@ -43,6 +45,6 @@ label_hmac = Label(root, text="")
 button_hmac = Button(root, text='GO HMAC', command=partial(hmac_function, label_hmac, f_choix_fichier, f_choose_methode, choses, f_user_key))
 
 button_hmac.grid(column=0, row=3)
+label_hmac.configure(wraplength = 400)
 label_hmac.grid(column=0, row=4)
-
 root.mainloop()
