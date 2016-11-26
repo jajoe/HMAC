@@ -14,14 +14,14 @@ class ChooseFileFrame(Frame):
 
     def __init__(self, parent):
         super(ChooseFileFrame, self).__init__(parent)
-        input_file_text = StringVar(self)
-        input_file_entry = Entry(self, width=100, textvariable=input_file_text)
-        input_file_text.set(getcwd())
+        self.input_file_text = StringVar(self)
+        self.input_file_entry = Entry(self, width=100, textvariable=self.input_file_text)
+        self.input_file_text.set(getcwd())
 
         button = Button(self, text='add file',
-                        command=partial(self.__update_field, input_file_text))
+                        command=partial(self.__update_field, self.input_file_text))
 
-        input_file_entry.grid(column=0, row=0)
+        self.input_file_entry.grid(column=0, row=0)
         button.grid(column=0, row=1)
 
 
