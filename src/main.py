@@ -24,4 +24,7 @@ f_choose_methode.grid(column=0, row=1)
 f_user_message = EntryWithLabel(root)
 f_user_message.grid(column=0, row=2)
 
+button_hmac = Button(root, text='GO HMAC')
+button_hmac.grid(column=0, row=3)
+
 root.mainloop()
