@@ -8,7 +8,7 @@ Quand Bob envoie un message à Alice, Alice doit être sûr que le message vient
 
 Le HMAC, comme son nom l'indique, se base sur des fonctions de hachage. Voici un petit rappel sur les fonctions de hachage.
 
-Le principe est de faire correspondre à une chaîne de caractère un mot-code unique, plus petit. Cela permet d'encrypter une donnée, comme un mot de passe, et de vérifier que le "hash" de la nouvelle chaîne de caractère donnée correspond bien au "hash" de la donnée initiale. C'est ainsi que sont stockés les mots de passe dans les bases de données. On peut aussi utiliser un "Hash" pour vérifier l'intégrité d'un message. Par exemple, quand on envoie un message, on envoie son "Hash" et le receveur recalcule le "Hash" du message et le compare à celui qui a été envoyé (si les deux correspondent, c'est que le message est intègre. Sinon, c'est qu'une erreur s'est glissé).
+Le principe est de faire correspondre à une chaîne de caractère un mot-code unique, généralement plus petit. Cela permet d'encrypter une donnée, comme un mot de passe, et de vérifier que le "hash" de la nouvelle chaîne de caractère donnée correspond bien au "hash" de la donnée initiale. C'est ainsi que sont stockés les mots de passe dans les bases de données. On peut aussi utiliser un "Hash" pour vérifier l'intégrité d'un message. Par exemple, quand on envoie un message, on envoie son "Hash" et le receveur recalcule le "Hash" du message et le compare à celui qui a été envoyé (si les deux correspondent, c'est que le message est intègre. Sinon, c'est qu'une erreur s'est glissé).
 
 Les deux méthodes de hachage les plus connus sont le SHA et le MD5. Le SHA est une famille de fonctions de hachage, composée du SHA, du SHA1, du SHA224, du SHA256 et du SHA512. Ce qui change, entre ces différentes fonctions SHA, est que peu à peu la sécurité s'est améliorée, mais la taille du "Hash" a également augmentée. Par exemple, le SHA512 est le plus sécurisée mais est son "Hash" est plus long que celui du SHA256, qui est plus long que celui du SHA1. Le MD5 est un concurrent du SHA, qui est apparu à peu près à la même période que le SHA1.
 
@@ -21,7 +21,7 @@ Le principe du HMAC ajoute donc de la sécurité aux fonctions de hachage. Histo
 Le HMAC est basé sur un échange de clés privés. L'émetteur et le receveur partagent une clé privée, qui leur servira a vérifié l'intégrité et l'authenticité des messages. Voici un exemple :
 Bob veut envoyer le message "Hello world !" à Alice. Il utilise sa clé, qu'on appellera K, pour créer un MAC à partir du message. Il envoie donc à Alice un message, et le MAC. Alice va utiliser sa clé K pour créer un MAC à partir du message, et compare le MAC ainsi obtenu à celui reçu. Si les deux sont identiques, c'est que le message est intègre et authentique. Sinon, c'est qu'il n'est pas intègre, ou qu'il n'est pas authentique. 
 
-Je ne détaillerai pas l'algorithme du HMAC faute de temps. Avant de parler des applications et des limites, on va faire une petite démonstration.
+Avant de parler des applications et des limites, on va faire une petite démonstration.
 
 ## Démonstration
 
