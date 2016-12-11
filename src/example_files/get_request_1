@@ -1,0 +1,7 @@
+GET /images HTTP/1.2
+Date: Sun 12 Dec 2016 17:42:00 GMT
+Connection: close
+Host: www.nas-koisell.fr
+From: subsahara@insa-rouen.fr
+Accept: text/html, text/plain
+User-Agent: Mozilla/4.0
